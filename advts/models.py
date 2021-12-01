@@ -8,7 +8,7 @@ class Advert(models.Model):
     price = models.DecimalField(max_digits=12, decimal_places=2, verbose_name='Цена')
     address = models.CharField(max_length=128, verbose_name='Адрес')
 
-    created_at = models.DateTimeField(auto_now_add=True, verbose_name="Дата и вермя создания")
+    created_at = models.DateTimeField(auto_now_add=True, verbose_name='Дата и вермя создания')
     updated_at = models.DateTimeField(auto_now=True, verbose_name='Дата и время последнего обновления')
 
     def __str__(self):
