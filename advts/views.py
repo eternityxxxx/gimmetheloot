@@ -1,3 +1,16 @@
-from django.shortcuts import render
+from rest_framework.generics import ListCreateAPIView, RetrieveUpdateDestroyAPIView
 
-# Create your views here.
+from .models import Advert
+from .serializers import AdvertSerializer
+
+
+class AdvertList(ListCreateAPIView):
+
+    queryset = Advert.objects.all()
+    serializer_class = AdvertSerializer
+
+
+class AdvertDelete(RetrieveUpdateDestroyAPIView):
+
+    queryset = Advert.objects.all()
+    serializer_class = AdvertSerializer
