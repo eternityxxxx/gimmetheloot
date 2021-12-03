@@ -13,3 +13,9 @@ class Advert(models.Model):
 
     def __str__(self):
         return self.title + ' ' + str(self.price)
+
+
+class AdvertImage(models.Model):
+
+    advert = models.ForeignKey('Advert', null=True, on_delete=models.SET_NULL, related_name='images', verbose_name='Объявление')
+    image = models.ImageField(upload_to='adverts/')
